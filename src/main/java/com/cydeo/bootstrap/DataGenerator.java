@@ -2,6 +2,7 @@ package com.cydeo.bootstrap;
 
 import com.cydeo.entity.Department;
 import com.cydeo.entity.Employee;
+import com.cydeo.entity.Region;
 import com.cydeo.enums.Gender;
 import com.cydeo.repository.DepartmentRepository;
 import com.cydeo.repository.EmployeeRepository;
@@ -42,6 +43,18 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 = new Department("Phones","Electronics");
         Department d5 = new Department("Computers","Electronics");
 
+        Region r1 = new Region("Southwest","USA");
+        Region r2 = new Region("Central","USA");
+        Region r3 = new Region("Northwest","USA");
+        Region r4 = new Region("Quebec","Canada");
+        Region r5 = new Region("Central","Asia");
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
+
         e1.setDepartment(d1);
         e2.setDepartment(d2);
         e3.setDepartment(d3);
@@ -53,6 +66,7 @@ public class DataGenerator implements CommandLineRunner {
 
         employeeRepository.saveAll(employeeList);
         //departmentRepository.saveAll(departmentList);
+
 
 
     }
